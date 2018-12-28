@@ -1,7 +1,7 @@
 FastQTL
 ---------
 
-Modified version of FastQTL (Ongen, H. et al., 2016) that handles structural variants
+Modified version of FastQTL (Ongen, H. et al., 2016) that handles structural variants. Forked from [https://github.com/hall-lab/fastqtl](https://github.com/hall-lab/fastqtl)
 
 [Ongen, H., Buil, A., Brown, A. A., Dermitzakis, E. T. & Delaneau, O. Fast and efficient QTL mapper for thousands of molecular phenotypes. Bioinformatics 32, 1479–1485 (2016).](http://bioinformatics.oxfordjournals.org/content/32/10/1479)
 
@@ -14,3 +14,13 @@ A structural variant (SV) lies within the cis window if any part of the spanned 
 The spanned region for deletions, duplications, and inversions is inferred from the END field in the 8th column of the VCF. If the END field is absent for a variant, it assumes that the END is the same as the POS field (identical to standard FastQTL behavior).
 
 The variant type is inferred from the SVTYPE field of the 8th column of the VCF. Inversions must be designated as SVTYPE=INV for proper behavior
+
+#### Running test
+
+~~~
+module load boost/1.55.0-gcc
+module load gsl/2.2.1
+cd /path/to/fastqtl/example
+fastQTL --vcf genotypes.vcf.gz --bed phenotypes.bed.gz --region 22:17000000-18000000 --out test.txt.gz
+~~~
+
