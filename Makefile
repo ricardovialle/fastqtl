@@ -1,5 +1,5 @@
 #PLEASE SPECIFY THE R path here where you built the R math library standalone 
-RMATH=/hpc/users/viallr01/ad-omics_ricardo/MyApps/R-3.2.0/src
+RMATH=../R-3.2.0/src
 
 #compiler
 CXX=g++
